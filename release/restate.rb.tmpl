@@ -27,4 +27,8 @@ class Restate < Formula
   def install
     bin.install "restate"
   end
+
+  test do
+    shell_output("restate -V")
+  end
 end
