@@ -1,4 +1,4 @@
-# Restatedev Tap
+# Restate homebrew tap
 
 ## How do I install these formulae?
 
