@@ -19,4 +19,7 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
       - run: ./release/release.sh
-      - run: git push origin main
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.HOMEBREW_TAP_CONTENTS_WRITE || secrets.GITHUB_TOKEN }}
