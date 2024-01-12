@@ -2,7 +2,7 @@
 
 class Restate < Formula
   version '${version}'
-  desc "Restate CLI"
+  desc "Restate ${DESC}"
   homepage "https://github.com/restatedev/restate"
 
   arch = Hardware::CPU.arch.to_s
@@ -16,19 +16,19 @@ class Restate < Formula
       end
   elsif OS.linux?
      if Hardware::CPU.arm?
-         url "https://github.com/restatedev/restate/releases/download/v#{version}/restate.aarch64-unknown-linux-gnu.tar.gz"
+         url "https://github.com/restatedev/restate/releases/download/v#{version}/restate.aarch64-unknown-linux-musl.tar.gz"
          sha256 "${linux_arm64}"
      else
-         url "https://github.com/restatedev/restate/releases/download/v#{version}/restate.x86_64-unknown-linux-gnu.tar.gz"
+         url "https://github.com/restatedev/restate/releases/download/v#{version}/restate.x86_64-unknown-linux-musl.tar.gz"
          sha256 "${linux_x86}"
      end
   end
 
   def install
-    bin.install "restate"
+    bin.install "${BINARY}"
   end
 
   test do
-    shell_output("restate -V")
+    shell_output("${BINARY} -V")
   end
 end
