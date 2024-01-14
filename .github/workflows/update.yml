@@ -26,3 +26,4 @@ jobs:
         uses: ad-m/github-push-action@v0.8.0
         with:
           github_token: ${{ secrets.HOMEBREW_TAP_CONTENTS_WRITE || secrets.GITHUB_TOKEN }}
+          repository: restatedev/homebrew-tap
