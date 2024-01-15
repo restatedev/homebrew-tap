@@ -10,8 +10,8 @@ linux_arm64=$(curl --silent --location --fail "https://github.com/restatedev/res
 
 export version darwin_x86 darwin_arm64 linux_x86 linux_arm64
 
-BINARY=restate DESC=CLI envsubst < "${SCRIPT_DIR}/restate.rb.tmpl" > "${SCRIPT_DIR}/../Formula/restate.rb"
-BINARY=restate-server DESC=Server envsubst < "${SCRIPT_DIR}/restate.rb.tmpl" > "${SCRIPT_DIR}/../Formula/restate-server.rb"
+CLASSNAME=Restate BINARY=restate DESC=CLI envsubst < "${SCRIPT_DIR}/restate.rb.tmpl" > "${SCRIPT_DIR}/../Formula/restate.rb"
+CLASSNAME=RestateServer BINARY=restate-server DESC=Server envsubst < "${SCRIPT_DIR}/restate.rb.tmpl" > "${SCRIPT_DIR}/../Formula/restate-server.rb"
 
 git -C "${SCRIPT_DIR}/.." reset
 git -C "${SCRIPT_DIR}/.." add "Formula/restate.rb"
