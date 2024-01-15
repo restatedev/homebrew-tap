@@ -2,7 +2,7 @@
 
 class Restate < Formula
   version '0.7.0'
-  desc "Restate CLI"
+  desc "Restate Server"
   homepage "https://github.com/restatedev/restate"
 
   arch = Hardware::CPU.arch.to_s
@@ -25,10 +25,10 @@ class Restate < Formula
   end
 
   def install
-    bin.install "restate"
+    bin.install "restate-server"
   end
 
   test do
-    shell_output("restate -V")
+    shell_output("restate-server -V")
   end
 end
