@@ -1,25 +1,25 @@
 class RestateServer < Formula
   desc "Restate Server"
   homepage "https://github.com/restatedev/restate"
-  version "1.3.2"
+  version "1.4.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://restate.gateway.scarf.sh/v1.3.2/restate-server-aarch64-apple-darwin.tar.xz"
-      sha256 "a54d6cf0afe4eaa23da0875468f210f2e65f9b61c08901211fa29de36b85026e"
+      url "https://restate.gateway.scarf.sh/v1.4.0/restate-server-aarch64-apple-darwin.tar.xz"
+      sha256 "2edc1ec20254557db3329446f3f661f0dac323a12eb709f3f031852b823c2501"
     end
     if Hardware::CPU.intel?
-      url "https://restate.gateway.scarf.sh/v1.3.2/restate-server-x86_64-apple-darwin.tar.xz"
-      sha256 "b63f7504f8fb1dd23a558e5b6f08ad8ad90e14706cb3d1f6e602f5327a7764c4"
+      url "https://restate.gateway.scarf.sh/v1.4.0/restate-server-x86_64-apple-darwin.tar.xz"
+      sha256 "ca14d89be7375dd5aa3924d56e97390a5229da2d28a7669bf1ddd8f90c9b111a"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://restate.gateway.scarf.sh/v1.3.2/restate-server-aarch64-unknown-linux-musl.tar.xz"
-      sha256 "30286cf16d34c81f5b4c0cc9d3e4e6df937376211cfc88c3963a39b408e28917"
+      url "https://restate.gateway.scarf.sh/v1.4.0/restate-server-aarch64-unknown-linux-musl.tar.xz"
+      sha256 "73b3d7be5b9e3ee078ec6a388ab78e253f7cafc0b96363c9142a4991ff5fdc43"
     end
     if Hardware::CPU.intel?
-      url "https://restate.gateway.scarf.sh/v1.3.2/restate-server-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "1a308857c944f528d2c184850857604c3c123d83724be185bc9740da41096867"
+      url "https://restate.gateway.scarf.sh/v1.4.0/restate-server-x86_64-unknown-linux-musl.tar.xz"
+      sha256 "b1f0ed429b62921e0155fe1d69f4114af8f7df4995a89e722362a116da40fa57"
     end
   end
   license "BUSL-1.1"
