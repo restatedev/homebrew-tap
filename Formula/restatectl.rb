@@ -1,25 +1,25 @@
 class Restatectl < Formula
   desc "Restate cluster administration tools"
   homepage "https://github.com/restatedev/restate"
-  version "1.7.0"
+  version "1.7.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://restate.gateway.scarf.sh/v1.7.0/restatectl-aarch64-apple-darwin.tar.xz"
-      sha256 "6c9e8a45880dc37ad33b1e994ed36b85c671fb741a25af082dec83d0112e881b"
+      url "https://restate.gateway.scarf.sh/v1.7.1/restatectl-aarch64-apple-darwin.tar.xz"
+      sha256 "c60196842315522522a64fae3341a1213f0fc7543e3b279c82e6b91ef89623b9"
     end
     if Hardware::CPU.intel?
-      url "https://restate.gateway.scarf.sh/v1.7.0/restatectl-x86_64-apple-darwin.tar.xz"
-      sha256 "20f262eda0bec32ffdf34d19bb31ac338b4dd8b028e0e4200654634022df99d1"
+      url "https://restate.gateway.scarf.sh/v1.7.1/restatectl-x86_64-apple-darwin.tar.xz"
+      sha256 "18aec5c5f040745b69a0a9f5c731f8711a42cc1576775ed784a83f4a492a242c"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://restate.gateway.scarf.sh/v1.7.0/restatectl-aarch64-unknown-linux-musl.tar.xz"
-      sha256 "d4bff32fe7caa10433efd75e0e8e50e502b2740dcf689721d7370826ad7e001f"
+      url "https://restate.gateway.scarf.sh/v1.7.1/restatectl-aarch64-unknown-linux-musl.tar.xz"
+      sha256 "bd74e60fb8868764e72bd02ee156111cddb811263890d4fb207986a3e1a736e6"
     end
     if Hardware::CPU.intel?
-      url "https://restate.gateway.scarf.sh/v1.7.0/restatectl-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "5ab9bfb1d2a9da5a0327296fcea8c8cb21787441b23321f224064b8cedc6e8f6"
+      url "https://restate.gateway.scarf.sh/v1.7.1/restatectl-x86_64-unknown-linux-musl.tar.xz"
+      sha256 "551efa4601e38722b17634f840c52a3c8291a9295188234d8772287799d3d628"
     end
   end
   license "BUSL-1.1"
