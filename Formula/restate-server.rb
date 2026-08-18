@@ -1,25 +1,25 @@
 class RestateServer < Formula
   desc "Restate Server"
   homepage "https://github.com/restatedev/restate"
-  version "1.7.3"
+  version "1.7.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://restate.gateway.scarf.sh/v1.7.3/restate-server-aarch64-apple-darwin.tar.xz"
-      sha256 "f8b08352c4e88a6d3eb02139393100f29364038ebe5b5f7e6ab52f1203e0b144"
+      url "https://restate.gateway.scarf.sh/v1.7.4/restate-server-aarch64-apple-darwin.tar.xz"
+      sha256 "fbc2d01e4e471f9a6395c3302e0452477a0be654caa503350b9c52b92dec5eac"
     end
     if Hardware::CPU.intel?
-      url "https://restate.gateway.scarf.sh/v1.7.3/restate-server-x86_64-apple-darwin.tar.xz"
-      sha256 "0ba9d1b49e72451842ad5ad0fe96bda33ff47be09749a01dd2ea81cc7493b3ce"
+      url "https://restate.gateway.scarf.sh/v1.7.4/restate-server-x86_64-apple-darwin.tar.xz"
+      sha256 "a7975a15cf1e22af48f5760e9ef5b096eb2b9a49d30b949641ce589aae86981a"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://restate.gateway.scarf.sh/v1.7.3/restate-server-aarch64-unknown-linux-musl.tar.xz"
-      sha256 "ff3ed6682ab3ee2f22431f5d491c18b24fc8f0474d7e492234cfe32cbd48017d"
+      url "https://restate.gateway.scarf.sh/v1.7.4/restate-server-aarch64-unknown-linux-musl.tar.xz"
+      sha256 "69a01ef2e69c596aad7cb4be690776f1cfc821a5d96174c9f77bad938ce586c7"
     end
     if Hardware::CPU.intel?
-      url "https://restate.gateway.scarf.sh/v1.7.3/restate-server-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "7446cb12197a15e2c230cc9df050e40e4cc89499edaead1ff614b55cb9b4a140"
+      url "https://restate.gateway.scarf.sh/v1.7.4/restate-server-x86_64-unknown-linux-musl.tar.xz"
+      sha256 "895ec4af4f7b297e485441d6d9c07c2e7cecdf18266bbc3a2cb77e23408be7ea"
     end
   end
   license "BUSL-1.1"
@@ -51,10 +51,18 @@ class RestateServer < Formula
   end
 
   def install
-    bin.install "restate-server" if OS.mac? && Hardware::CPU.arm?
-    bin.install "restate-server" if OS.mac? && Hardware::CPU.intel?
-    bin.install "restate-server" if OS.linux? && Hardware::CPU.arm?
-    bin.install "restate-server" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "restate-server"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "restate-server"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "restate-server"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "restate-server"
+    end
 
     install_binary_aliases!
 
