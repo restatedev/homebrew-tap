@@ -1,25 +1,25 @@
 class Restatectl < Formula
   desc "Restate cluster administration tools"
   homepage "https://github.com/restatedev/restate"
-  version "1.7.3"
+  version "1.7.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://restate.gateway.scarf.sh/v1.7.3/restatectl-aarch64-apple-darwin.tar.xz"
-      sha256 "0ab444f40dc0115bf9c446851da7b7a75ef425d926cabb26b5484440bc2a0338"
+      url "https://restate.gateway.scarf.sh/v1.7.4/restatectl-aarch64-apple-darwin.tar.xz"
+      sha256 "c75816be96d87e0948cb02ce5798088c7df36b6981532e7c8f62d5a36358f472"
     end
     if Hardware::CPU.intel?
-      url "https://restate.gateway.scarf.sh/v1.7.3/restatectl-x86_64-apple-darwin.tar.xz"
-      sha256 "96ff2b9c31f4086ac46fc0f498fc95d22a31b45efd4c0b1b7c36e0aaba7fc975"
+      url "https://restate.gateway.scarf.sh/v1.7.4/restatectl-x86_64-apple-darwin.tar.xz"
+      sha256 "2127cbb439daeae4255b7fd868a113ec2aa1ff9212cd465c0958468daf8eb041"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://restate.gateway.scarf.sh/v1.7.3/restatectl-aarch64-unknown-linux-musl.tar.xz"
-      sha256 "460fd16791eea7701bb3880b56c9f6ba17ae04ce6b1fe1af3f927f7bfd0c2fb0"
+      url "https://restate.gateway.scarf.sh/v1.7.4/restatectl-aarch64-unknown-linux-musl.tar.xz"
+      sha256 "d953565d92b32cc6edda4d99b0138ebc57b75676e54f332c9a8784174e3c842f"
     end
     if Hardware::CPU.intel?
-      url "https://restate.gateway.scarf.sh/v1.7.3/restatectl-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "b5361d2435fcf076004494ea257701079465f6109626fd7fc670cfae85561fae"
+      url "https://restate.gateway.scarf.sh/v1.7.4/restatectl-x86_64-unknown-linux-musl.tar.xz"
+      sha256 "6c9f0f879d387429d9bed84a50212b491605e1bf415550654f3fa5cbfbfbb70f"
     end
   end
   license "BUSL-1.1"
@@ -51,10 +51,18 @@ class Restatectl < Formula
   end
 
   def install
-    bin.install "restatectl" if OS.mac? && Hardware::CPU.arm?
-    bin.install "restatectl" if OS.mac? && Hardware::CPU.intel?
-    bin.install "restatectl" if OS.linux? && Hardware::CPU.arm?
-    bin.install "restatectl" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "restatectl"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "restatectl"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "restatectl"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "restatectl"
+    end
 
     install_binary_aliases!
 
