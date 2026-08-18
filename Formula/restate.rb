@@ -1,25 +1,25 @@
 class Restate < Formula
   desc "Restate CLI"
   homepage "https://github.com/restatedev/restate"
-  version "1.7.3"
+  version "1.7.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://restate.gateway.scarf.sh/v1.7.3/restate-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "6708f11ad60bbb7af5af5fd1f0709a96f70318ae91a3c3ebcaefe6e06ad576a4"
+      url "https://restate.gateway.scarf.sh/v1.7.4/restate-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "a9eeb3e27fe533db0815e6326959d3fdc568fbd8a31ffb00083bf7f4c438a75d"
     end
     if Hardware::CPU.intel?
-      url "https://restate.gateway.scarf.sh/v1.7.3/restate-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "c0dc4c2283664f061bd8ff3dbe974b55f522e16a9ff147dd46282b8e96fcb17b"
+      url "https://restate.gateway.scarf.sh/v1.7.4/restate-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "612ff4a1d42824884cceec5a78428a4b18d95d53fe19b366385150dfd7ae02f8"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://restate.gateway.scarf.sh/v1.7.3/restate-cli-aarch64-unknown-linux-musl.tar.xz"
-      sha256 "cee45a4e81a8d276b13475f6377250e72c9c6dd3ff6edc95f2fe24775f7a9f6b"
+      url "https://restate.gateway.scarf.sh/v1.7.4/restate-cli-aarch64-unknown-linux-musl.tar.xz"
+      sha256 "1aa91601a41b6b0c41aef61afc72d10e23a91e91ed31ae1b20bf6b843ba2f4a4"
     end
     if Hardware::CPU.intel?
-      url "https://restate.gateway.scarf.sh/v1.7.3/restate-cli-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "5329fca65e1439186b94d796f2d75eeb5dcdd97fe5865cbdb8d0a942519cae09"
+      url "https://restate.gateway.scarf.sh/v1.7.4/restate-cli-x86_64-unknown-linux-musl.tar.xz"
+      sha256 "cfe2da7c9c10e75c694d370a4605db90492c89ffca2d3798d0144de3ef2876ec"
     end
   end
   license "BUSL-1.1"
@@ -51,10 +51,18 @@ class Restate < Formula
   end
 
   def install
-    bin.install "restate" if OS.mac? && Hardware::CPU.arm?
-    bin.install "restate" if OS.mac? && Hardware::CPU.intel?
-    bin.install "restate" if OS.linux? && Hardware::CPU.arm?
-    bin.install "restate" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "restate"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "restate"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "restate"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "restate"
+    end
 
     install_binary_aliases!
 
