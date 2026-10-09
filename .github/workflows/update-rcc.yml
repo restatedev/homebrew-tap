@@ -1,0 +1,27 @@
+name: Update rcc version
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Git
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: Update rcc
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: ./release/update-rcc.sh
+
+      - name: Push changes
+        run: git push
